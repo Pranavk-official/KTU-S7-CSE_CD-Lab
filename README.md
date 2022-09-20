@@ -5,12 +5,13 @@ This repository contains c programs for compiler lab of 7th semester CSE in KTU.
 1. Design and implement a lexical analyzer for given language using C and the lexical analyzer should ignore redundant spaces, tabs and new lines.
 2. Implementation of Lexical Analyzer using Lex Tool
 3. Generate YACC specification for a few syntactic categories.
-> a) Program to recognize a valid arithmetic expression that uses operator +, – , * and
-/.
-> b) Program to recognize a valid variable which starts with a letter followed by any
-number of letters or digits.
-> c) Implementation of Calculator using LEX and YACC
-> d) Convert the BNF rules into YACC form and write code to generate abstract
+> a) Program to recognize a valid arithmetic expression that uses operator +, – , * and /.
+ 
+> \nb) Program to recognize a valid variable which starts with a letter followed by any number of letters or digits.
+
+> \nc) Implementation of Calculator using LEX and YACC
+
+> \n d) Convert the BNF rules into YACC form and write code to generate abstract
 syntax tree
 4. Write program to find ε – closure of all states of any given NFA with ε transition.
 5. Write program to convert NFA with ε transition to NFA without ε transition.
