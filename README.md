@@ -13,7 +13,7 @@ This repository contains c programs for compiler lab of 7th semester CSE in KTU.
  c) Implementation of Calculator using LEX and YACC.<br>
  d) Convert the BNF rules into YACC form and write code to generate abstract syntax tree.<br>
 
-<details>
+</details>
 4. Write program to find ε – closure of all states of any given NFA with ε transition.
 5. Write program to convert NFA with ε transition to NFA without ε transition.
 6. Write program to convert NFA to DFA
