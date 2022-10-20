@@ -5,7 +5,7 @@ This repository contains c programs for compiler lab of 7th semester CSE in KTU.
 1. Design and implement a lexical analyzer for given language using C and the lexical analyzer should ignore redundant spaces, tabs and new lines.
 2. Implementation of Lexical Analyzer using Lex Tool
 <details>
-3. <summary>Generate YACC specification for a few syntactic categories.</summary><br>
+<summary>3. Generate YACC specification for a few syntactic categories.</summary><br>
  a) Program to recognize a valid arithmetic expression that uses operator +, – , * and /.<br>
  b) Program to recognize a valid variable which starts with a letter followed by any number of letters or digits.<br>
  c) Implementation of Calculator using LEX and YACC.<br>
