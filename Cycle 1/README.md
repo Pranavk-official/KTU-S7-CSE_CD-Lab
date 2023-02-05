@@ -44,7 +44,7 @@
 > To run the file the commands are :
 >> \$ `lex identifier.l` <br>
 >> \$ `yacc identifier.y -d` <br>
->> \$` gcc lex.yy.c y.tab.c -lfl-o identifier` <br>
+>> \$` gcc lex.yy.c y.tab.c -lfl -o identifier` <br>
 >> \$`./identifier` 
 
 > Output :
@@ -67,7 +67,7 @@
 > To run the file the commands are :
 >> \$ `lex arithmetic-identifier.l` <br>
 >> \$ `yacc arithmetic-identifier.y -d` <br>
->> \$` gcc lex.yy.c y.tab.c -lfl-o arithmetic-identifier` <br>
+>> \$` gcc lex.yy.c y.tab.c -lfl -o arithmetic-identifier` <br>
 >> \$`./arithmetic-identifier` 
 
 > Output :
