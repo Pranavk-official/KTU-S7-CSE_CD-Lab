@@ -12,7 +12,7 @@ int lc=0,sc,=0,tc=0,ch=0;
 int main()
 {
 	FILE *fp;
-	fp = fopen("a.txt", "r");
+	fp = fopen("input.c", "r");
 	yyin = fp;
 	yylex();
 	printf("No of Lines :\\t %d\\n",lc);
