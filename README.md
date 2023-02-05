@@ -5,7 +5,7 @@ This repository contains all programs for **Compiler Lab** of **7th semester CSE
 
 >The ***syllabus*** is provided in this repo.
 
-> ***All of the programs are run on linux for windows the process may differ***
+> ***All of the programs are run on linux ; for windows the process may differ***
 
 ## List of Exercises/Experiments :
 
