@@ -53,5 +53,6 @@ int main(){
   {
       printf("\n Valid expression! \n");
   }
+  /*press ctrl + d to print the result*/
 	return 0;
 }
