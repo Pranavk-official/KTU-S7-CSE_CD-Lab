@@ -19,7 +19,7 @@
 <B>1 BEGIN C;
 <B>0 BEGIN INITIAL;
 <B>[^01\n] BEGIN DEAD;
-<B>\n BEGIN INITIAL; {printf("Not Accepted\n");}  
+<B>\n BEGIN INITIAL; {printf("Accepted\n");}  
 
 <C>1 BEGIN B;
 <C>0 BEGIN A;

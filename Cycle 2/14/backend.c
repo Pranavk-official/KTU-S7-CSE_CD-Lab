@@ -28,8 +28,9 @@ void main()
             strcpy(opr, "DIV");
             break;
         }
-    printf("\n\tMov %c,R%d", str[2], i);
-    printf("\n\t%s%c,R%d", opr, str[4], i);
-    printf("\n\tMov R%d, %c", i, str[0]);
+    printf("\nMOV %c,R%d", str[2], i);
+    printf("\n%s %c,R%d", opr, str[4], i);
+    printf("\nMOV R%d, %c", i, str[0]);
+    printf("%c",opr);
     } while (strcmp(icode[++i], "exit") != 0);
 }
