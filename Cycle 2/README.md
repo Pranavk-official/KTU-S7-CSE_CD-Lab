@@ -3,8 +3,8 @@
 ## 8. Implementation of Calculator using LEX and YACC
 
 > To run the file the commands are :
->> \$ `lex calc.l` <br>
 >> \$ `yacc calc.y -d` <br>
+>> \$ `lex calc.l` <br>
 >> \$` gcc lex.yy.c y.tab.c -lfl -o calc` <br>
 >> \$`./calc` 
 
@@ -15,7 +15,7 @@
 ## 9. Write a LEX Program to convert the substring abc to ABC from the given input string
 
 > To run the file the commands are :
->> \$ `lex calc.l` <br>
+>> \$ `lex upper.l` <br>
 >> \$` gcc lex.yy.c -lfl -o upper` <br>
 >> \$`./upper` 
 

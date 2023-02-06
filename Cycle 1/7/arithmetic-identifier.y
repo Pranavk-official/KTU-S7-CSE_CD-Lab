@@ -1,29 +1,57 @@
 %{
-  #include<stdio.h>
-  int valid=1;
+#include <stdio.h>
+#include <stdlib.h>
+
+int valid = 1;
+
+extern int yylex();
+void yyerror();
 %}
 
-%token num id op
 
-%%
-start : id '=' s ';'
-s :id x | num x | '-' num x  | '(' s ')' x  ;
-x :op s | '-' s |   ;
-%%
 
-int yyerror()
-{
-  valid=0;
-  printf("\\nInvalid expression!\\n");
-  return 0;
+%union {
+	float f;
 }
 
-int main()
-{
-  printf("\\nEnter the expression:\\n");
-  yyparse();
+%token <f> NUM
+%type <f> E T F
+
+%%
+
+S : E			    { valid = 1; } 
+  ;
+
+E : E '+' T		
+  | E '-' T		
+  | T			
+  ;
+
+T : T '*' F		
+  | T '/' F		
+  | F			
+  ;
+
+F : '(' E ')'	{ }
+  | '-' F		  { }
+  | NUM			
+  ;
+
+%%
+
+
+void yyerror() {
+  valid = 0;
+  printf("\n Invalid expression! \n");	
+  exit(1);
+}
+
+int main(){
+  printf("\nEnter the expression: ");
+	yyparse();
   if(valid)
   {
-      printf("\\nValid expression!\\n");
+      printf("\n Valid expression! \n");
   }
+	return 0;
 }

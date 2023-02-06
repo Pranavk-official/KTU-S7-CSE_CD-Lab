@@ -67,15 +67,17 @@
 
 
 /* First part of user prologue.  */
-#line 1 "calc.y"
+#line 1 "arithmetic-identifier.y"
 
 #include <stdio.h>
 #include <stdlib.h>
 
-extern int yylex();
-void yyerror(char *msg);
+int valid = 1;
 
-#line 79 "y.tab.c"
+extern int yylex();
+void yyerror();
+
+#line 81 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -134,11 +136,11 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 11 "calc.y"
+#line 13 "arithmetic-identifier.y"
 
 	float f;
 
-#line 142 "y.tab.c"
+#line 144 "y.tab.c"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -558,8 +560,8 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    20,    20,    23,    24,    25,    28,    29,    30,    33,
-      34,    35
+       0,    22,    22,    25,    26,    27,    30,    31,    32,    35,
+      36,    37
 };
 #endif
 
@@ -1123,67 +1125,25 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* S: E  */
-#line 20 "calc.y"
-                        { printf("Result : %f\n",(yyvsp[0].f)); }
-#line 1129 "y.tab.c"
-    break;
-
-  case 3: /* E: E '+' T  */
-#line 23 "calc.y"
-                        { (yyval.f) = (yyvsp[-2].f) + (yyvsp[0].f); }
-#line 1135 "y.tab.c"
-    break;
-
-  case 4: /* E: E '-' T  */
-#line 24 "calc.y"
-                        { (yyval.f) = (yyvsp[-2].f) - (yyvsp[0].f); }
-#line 1141 "y.tab.c"
-    break;
-
-  case 5: /* E: T  */
-#line 25 "calc.y"
-                        { (yyval.f) = (yyvsp[0].f); }
-#line 1147 "y.tab.c"
-    break;
-
-  case 6: /* T: T '*' F  */
-#line 28 "calc.y"
-                        { (yyval.f) = (yyvsp[-2].f) * (yyvsp[0].f); }
-#line 1153 "y.tab.c"
-    break;
-
-  case 7: /* T: T '/' F  */
-#line 29 "calc.y"
-                        { (yyval.f) = (yyvsp[-2].f) / (yyvsp[0].f); }
-#line 1159 "y.tab.c"
-    break;
-
-  case 8: /* T: F  */
-#line 30 "calc.y"
-                        { (yyval.f) = (yyvsp[0].f); }
-#line 1165 "y.tab.c"
+#line 22 "arithmetic-identifier.y"
+                            { valid = 1; }
+#line 1131 "y.tab.c"
     break;
 
   case 9: /* F: '(' E ')'  */
-#line 33 "calc.y"
-                { (yyval.f) = (yyvsp[-1].f); }
-#line 1171 "y.tab.c"
+#line 35 "arithmetic-identifier.y"
+                { }
+#line 1137 "y.tab.c"
     break;
 
   case 10: /* F: '-' F  */
-#line 34 "calc.y"
-                        { (yyval.f) = -(yyvsp[0].f); }
-#line 1177 "y.tab.c"
-    break;
-
-  case 11: /* F: NUM  */
-#line 35 "calc.y"
-                        { (yyval.f) = (yyvsp[0].f); }
-#line 1183 "y.tab.c"
+#line 36 "arithmetic-identifier.y"
+                          { }
+#line 1143 "y.tab.c"
     break;
 
 
-#line 1187 "y.tab.c"
+#line 1147 "y.tab.c"
 
       default: break;
     }
@@ -1376,16 +1336,22 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 38 "calc.y"
+#line 40 "arithmetic-identifier.y"
 
 
 
-void yyerror(char *msg) {
-	fprintf(stderr,"%s\n", msg);
-	exit(1);
+void yyerror() {
+  valid = 0;
+  printf("\n Invalid expression! \n");	
+  exit(1);
 }
 
 int main(){
+  printf("\nEnter the expression: ");
 	yyparse();
+  if(valid)
+  {
+      printf("\n Valid expression! \n");
+  }
 	return 0;
 }

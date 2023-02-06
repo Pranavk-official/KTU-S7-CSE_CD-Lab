@@ -41,7 +41,7 @@ int main()
     }
     yyin=file;
     yylex();
-    printf("\\n");
+    printf("\n");
     return(0);
 }
 int yywrap()

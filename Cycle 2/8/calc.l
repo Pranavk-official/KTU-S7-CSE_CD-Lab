@@ -1,12 +1,17 @@
 %{
-  #include "y.tab.h"
-  extern yylval;
+#include <stdio.h>
+#include <stdlib.h>
+#include "y.tab.h" // generated via yacc -d
 %}
 
 %%
-[0-9]+	{ yylval = atoi(yytext); return NUMBER; }
-[a-zA-Z]+	{return ID;}
-[\\t]+	;
-\\n	{return 0;}
-. 	{return yytext[0];}
+
+[0-9]++(\.[0-9]+)?([eE][0-9]+)?   { yylval.f = atof(yytext); return NUM; }
+[-+()*/]                          { return yytext[0]; }
+[ \t\f\v\n]                       { ; }
+
 %%
+
+int yywrap(){
+  return -1;
+}

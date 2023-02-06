@@ -441,8 +441,8 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "calc.l"
-#line 2 "calc.l"
+#line 1 "arithmetic-identifier.l"
+#line 3 "arithmetic-identifier.l"
 #include <stdio.h>
 #include <stdlib.h>
 #include "y.tab.h" // generated via yacc -d
@@ -664,7 +664,7 @@ YY_DECL
 		}
 
 	{
-#line 7 "calc.l"
+#line 8 "arithmetic-identifier.l"
 
 
 #line 670 "lex.yy.c"
@@ -726,23 +726,23 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 9 "calc.l"
+#line 10 "arithmetic-identifier.l"
 { yylval.f = atof(yytext); return NUM; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 10 "calc.l"
+#line 11 "arithmetic-identifier.l"
 { return yytext[0]; }
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 11 "calc.l"
+#line 12 "arithmetic-identifier.l"
 { ; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 13 "calc.l"
+#line 14 "arithmetic-identifier.l"
 ECHO;
 	YY_BREAK
 #line 748 "lex.yy.c"
@@ -1750,7 +1750,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 13 "calc.l"
+#line 14 "arithmetic-identifier.l"
 
 
 int yywrap(){

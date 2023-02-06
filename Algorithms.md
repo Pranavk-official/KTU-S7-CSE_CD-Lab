@@ -10,7 +10,7 @@
 
 - Start the program and include the necessary header file <stdio.h>.
 - Define the regular expressions to match the different token types, such as keywords, preprocessor directives, identifiers, numbers, comments, and unknown tokens.
-- Use the yyin variable to open the input file "var.c" for reading.
+- Use the yyin variable to open the input file "input.c" for reading.
 - Call the yylex() function to start the lexical analysis.
 - The yylex() function will match the input text against the defined regular expressions and print the token type and its corresponding text for each match.
 - The yywrap() function will return 1 when the end of the input file is reached.
@@ -19,7 +19,7 @@
 ### 3. LEX Program to count the number of lines and number of characters in an input.
 
 - The code starts with the declaration of 4 integer variables lc, sc, tc, and ch to keep track of the number of lines, spaces, tabs, and characters in the file respectively.
-- The code then opens the file "a.txt" in read mode and assigns it to the variable fp.
+- The code then opens the file "input.c" in read mode and assigns it to the variable fp.
 - The contents of the file are then passed to the lexical analyzer through the yyin variable.
 - The lexical analyzer uses the rules specified in the %% section to count the number of lines, spaces, tabs, and characters in the file.
 
@@ -38,7 +38,7 @@
 
 - Include the standard input/output library stdio.h
 - Initialize four integer variables, lc, sc, tc, and ch, to 0.
-- Open the file a.txt in read mode and assign its pointer to fp.
+- Open the file input.c in read mode and assign its pointer to fp.
 - Assign the fp to yyin.
 - Call the yylex function.
 - In the yylex function:

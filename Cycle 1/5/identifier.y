@@ -6,23 +6,23 @@
 %token num id
 
 %%
-start 	:	id s
+start 	:	id s  {valid = 1;}
 s	:	id s|num s| ;
 %%
 
 int yyerror()
 {
   valid=0;
-  printf("\\nInvalid identifier!\\n");
+  printf("\nInvalid identifier!\n");
   return 0;
 }
 
 int main()
 {
-  printf("\\nEnter the identifier:\\n");
+  printf("\nEnter the identifier:\n");
   yyparse();
   if(valid)
   {
-      printf("\\nValid identifier!\\n");
+      printf("\nValid identifier!\n");
   }
 }
