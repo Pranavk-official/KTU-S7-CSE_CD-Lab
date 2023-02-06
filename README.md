@@ -9,7 +9,7 @@ This repository contains all programs for **Compiler Lab** of **7th semester CSE
 
 ## List of Exercises/Experiments :
 
-### CYCLE 1
+### [CYCLE 1](./Cycle%201/README.md)
 
 1. To Implement a lexical analyzer in C.
 2. To write a program for implementing a Lexical analyser using LEX tool
@@ -19,7 +19,7 @@ This repository contains all programs for **Compiler Lab** of **7th semester CSE
 6. LEX Program to count the number of vowels and consonants
 7. Generate a YACC specification to recognize a valid arithmetic expression that uses operators +, – , *,/ and parenthesis.
 
-### CYCLE 2
+### [CYCLE 2](./Cycle%202/README.md)
 
 8. Implementation of Calculator using LEX and YACC
 9. Write a LEX Program to convert the substring abc to ABC from the given input string
@@ -36,6 +36,6 @@ This repository contains all programs for **Compiler Lab** of **7th semester CSE
 
 ---
 
-# [Algorithms](./Algorithms.md)
+## [Algorithms](./Algorithms.md)
 
 The algorithms will be added to separate md file. 
