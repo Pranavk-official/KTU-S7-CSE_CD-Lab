@@ -1,31 +1,50 @@
 %{
-	#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+extern int yylex();
+void yyerror(char *msg);
 %}
-  %token NUMBER ID
-  %left '+''-'
-  %left '*''/'
-%%
-E:	T	{ printf("Result = %d",$$); return 0; }
-T:	T'+'T {$$=$1+$3;}
-	|T'-'T {$$=$1-$3;}
-	|T'*'T {$$=$1*$3;}
-	|T'/'T {$$=$1/$3;}
-	|'-'NUMBER {$$=-$2;}
-	|'-'ID {$$=-$2;}
-	|'('T')' {$$=$2;}
-    |ID {$$=$1;}
-    |NUMBER {$$=$1;}
-    ;
 
-%%
 
-int main()
-{
-	printf("Enter expression: ");
-	yyparse();
+
+%union {
+	float f;
 }
 
-int yyerror(char*s)
-{
-	printf("Expression is invalid");
+%token <f> NUM
+%type <f> E T F
+
+%%
+
+S : E			{ printf("Result : %f\n",$1); } /* press ctrl + d to print the result */
+  ;
+
+E : E '+' T		{ $$ = $1 + $3; }
+  | E '-' T		{ $$ = $1 - $3; }
+  | T			{ $$ = $1; }
+  ;
+
+T : T '*' F		{ $$ = $1 * $3; }
+  | T '/' F		{ $$ = $1 / $3; }
+  | F			{ $$ = $1; }
+  ;
+
+F : '(' E ')'	{ $$ = $2; }
+  | '-' F		{ $$ = -$2; }
+  | NUM			{ $$ = $1; }
+  ;
+
+%%
+
+
+void yyerror(char *msg) {
+	fprintf(stderr,"%s\n", msg);
+	exit(1);
+}
+
+int main(){
+	printf("\n press ctrl + d to print the result ");
+	yyparse();
+	return 0;
 }
