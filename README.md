@@ -33,3 +33,9 @@ This repository contains all programs for **Compiler Lab** of **7th semester CSE
 
 > Additional Lab Questions:
 >> 15. Program to find the Epsilon closure of all states of NFA
+
+---
+
+# [Algorithms](./Algorithms.md)
+
+The algorithms will be added to separate md file. 
