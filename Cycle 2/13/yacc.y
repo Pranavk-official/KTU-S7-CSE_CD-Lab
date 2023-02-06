@@ -12,12 +12,12 @@
 %type 	<dval> E
 
 %%
-S:E {printf("X=%c\\n",$$);}
+S:E {printf("X=%c\n",$$);}
 E:	NUM 	{}
-	|E'+'E 	{printf("%c=%c+%c\\n",p,$1,$3);$$=p;p++;}
-	|E'-'E	{printf("%c=%c-%c\\n",p,$1,$3);$$=p;p++;}
-	|E'*'E {printf("%c=%c*%c\\n",p,$1,$3);$$=p;p++;}
-	|E'/'E	{printf("%c=%c/%c\\n",p,$1,$3);$$=p;p++;}
+	|E'+'E 	{printf("%c=%c+%c\n",p,$1,$3);$$=p;p++;}
+	|E'-'E	{printf("%c=%c-%c\n",p,$1,$3);$$=p;p++;}
+	|E'*'E {printf("%c=%c*%c\n",p,$1,$3);$$=p;p++;}
+	|E'/'E	{printf("%c=%c/%c\n",p,$1,$3);$$=p;p++;}
 %%
 
 int main()
@@ -25,13 +25,13 @@ int main()
     printf("Enter the expression : ");
     yyparse();
     
-    printf("Expression is valid\\n");
+    printf("Expression is valid\n");
     return 0;
 }
 
 int yyerror()
 {
-  printf("Expression is invalid \\n");
+  printf("Expression is invalid \n");
   exit(0);
 }
 

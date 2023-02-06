@@ -1,9 +1,8 @@
 %{
 #include<stdio.h>
-int lc=0,sc,=0,tc=0,ch=0;
 %}
 %%
-[\\n \\t]	{printf("");}
+[ \n\t]	{printf("");}
 .	{printf("%s",yytext);}
 %%
 
