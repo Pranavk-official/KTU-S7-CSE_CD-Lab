@@ -42,11 +42,11 @@ F() {
 
 int main()
 {
-	printf("Recursive descent parsing for grammar\\n");
-	printf("\\nE->TE'\\nE'->+TE'/@\\nT->FT'\\nT'->*FT'/@\\nF->(E)/ID\\n\\n");
+	printf("Recursive descent parsing for grammar\n");
+	printf("\nE->TE'\nE'->+TE'/@\nT->FT'\nT'->*FT'/@\\nF->(E)/ID\n\n");
 	gets(input);
   	E();
-  	if(input[i]=='\\0' && error==0){
+  	if(input[i]=='\0' && error==0){
   		printf("string is Accepted");
   	}
   	else{
